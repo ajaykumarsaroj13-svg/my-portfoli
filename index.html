@@ -1,0 +1,1693 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="India's premium platform for IIT-JEE, NDA, IISER, Class 11 and Class 12 preparation." />
+    <title>AstraLearn | Complete Premium EdTech Platform</title>
+    <style>
+:root {
+  --ink: #08111f;
+  --muted: #627083;
+  --line: rgba(8, 17, 31, 0.1);
+  --panel: rgba(255, 255, 255, 0.82);
+  --white: #ffffff;
+  --blue: #276ef1;
+  --cyan: #09a7c7;
+  --green: #16a36b;
+  --orange: #f08a24;
+  --pink: #db4b82;
+  --violet: #7755e7;
+  --shadow: 0 22px 60px rgba(19, 34, 58, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 16% 8%, rgba(39, 110, 241, 0.16), transparent 26rem),
+    radial-gradient(circle at 84% 22%, rgba(240, 138, 36, 0.14), transparent 25rem),
+    linear-gradient(180deg, #f8fbff 0%, #ffffff 38%, #f4f8fb 100%);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 4vw, 4rem);
+  background: rgba(255, 255, 255, 0.76);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(20px);
+}
+
+.brand,
+.main-nav button,
+.top-cta,
+.ghost-btn,
+.mini-btn,
+.primary-btn,
+.secondary-btn,
+.store-btn {
+  border: 0;
+  border-radius: 8px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: transparent;
+  color: var(--ink);
+  font-weight: 900;
+  font-size: 1.05rem;
+}
+
+.brand-mark,
+.icon-box {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  color: white;
+  background: linear-gradient(135deg, var(--blue), var(--green));
+  box-shadow: 0 12px 25px rgba(39, 110, 241, 0.25);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  padding: 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.main-nav button {
+  padding: 0.68rem 0.95rem;
+  color: var(--muted);
+  background: transparent;
+  font-weight: 700;
+}
+
+.main-nav button.active {
+  color: white;
+  background: var(--ink);
+}
+
+.top-cta,
+.primary-btn {
+  padding: 0.85rem 1.1rem;
+  color: white;
+  background: linear-gradient(135deg, var(--ink), var(--blue));
+  box-shadow: 0 16px 32px rgba(39, 110, 241, 0.23);
+  font-weight: 800;
+}
+
+.secondary-btn,
+.store-btn,
+.ghost-btn,
+.mini-btn {
+  padding: 0.82rem 1.05rem;
+  color: var(--ink);
+  background: white;
+  border: 1px solid var(--line);
+  font-weight: 800;
+}
+
+.section-band,
+.section {
+  padding: clamp(4rem, 9vw, 7rem) clamp(1rem, 5vw, 5rem);
+}
+
+.hero.section-band {
+  padding-top: clamp(1.5rem, 3vw, 2.4rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.4rem);
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  align-items: center;
+  min-height: min(760px, calc(84vh - 74px));
+  overflow: hidden;
+}
+
+.hero-copy {
+  max-width: 780px;
+}
+
+.announcement,
+.eyebrow,
+.section-head span,
+.admin-head span {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(39, 110, 241, 0.18);
+  border-radius: 999px;
+  color: #1556c6;
+  background: rgba(255, 255, 255, 0.75);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.hero h1 {
+  margin: 1.2rem 0 1rem;
+  max-width: 920px;
+  font-size: clamp(2.55rem, 4.55vw, 4.25rem);
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+.hero p,
+.download p,
+.student-copy p {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.6vw, 1.13rem);
+  line-height: 1.5;
+}
+
+.cta-row,
+.store-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1.25rem 0;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  max-width: 780px;
+}
+
+.stat-grid div,
+.metric-grid div,
+.feature-card,
+.educator-card,
+.result-card,
+.course-card,
+.price-card,
+.table-panel,
+.control-form,
+.upload-panel,
+.integration-card,
+.role-grid div,
+.app-card,
+.welcome-card,
+.ai-panel,
+.profile-block {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.stat-grid div {
+  padding: 0.8rem;
+}
+
+.stat-grid strong,
+.metric-grid strong {
+  display: block;
+  font-size: 1.22rem;
+}
+
+.stat-grid span,
+.metric-grid span,
+.course-card span,
+.app-card span,
+.welcome-card span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 430px;
+  display: grid;
+  place-items: center;
+}
+
+.phone-shell {
+  width: min(270px, 75vw);
+  min-height: 440px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 34px;
+  background: linear-gradient(160deg, #111827, #24324a);
+  box-shadow: 0 40px 80px rgba(8, 17, 31, 0.35);
+  animation: float 7s ease-in-out infinite;
+}
+
+.phone-head {
+  width: 96px;
+  height: 24px;
+  margin: 0 auto 0.7rem;
+  border-radius: 999px;
+  background: #050914;
+}
+
+.phone-screen {
+  min-height: 364px;
+  padding: 1.1rem;
+  border-radius: 24px;
+  color: white;
+  background:
+    linear-gradient(160deg, rgba(39, 110, 241, 0.55), rgba(9, 167, 199, 0.22)),
+    #0b1324;
+}
+
+.screen-pill {
+  width: fit-content;
+  padding: 0.35rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.progress-ring {
+  display: grid;
+  place-items: center;
+  width: 98px;
+  height: 98px;
+  border-width: 12px;
+  margin: 1.4rem auto;
+  border: 16px solid rgba(255, 255, 255, 0.16);
+  border-top-color: #76f2bd;
+  border-right-color: #7dd3fc;
+  border-radius: 50%;
+  font-weight: 900;
+  font-size: 1.8rem;
+}
+
+.mini-bars {
+  display: flex;
+  align-items: end;
+  gap: 0.45rem;
+  height: 80px;
+  margin: 1rem 0;
+}
+
+.mini-bars span {
+  flex: 1;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(180deg, #76f2bd, #09a7c7);
+}
+
+.mini-bars span:nth-child(1) { height: 42%; }
+.mini-bars span:nth-child(2) { height: 72%; }
+.mini-bars span:nth-child(3) { height: 58%; }
+.mini-bars span:nth-child(4) { height: 88%; }
+
+.lesson-tile {
+  margin-top: 0.75rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.lesson-tile.muted {
+  opacity: 0.72;
+}
+
+.orbit-card {
+  position: absolute;
+  width: 220px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: var(--shadow);
+}
+
+.orbit-card span,
+.orbit-card small {
+  color: var(--muted);
+}
+
+.teacher-card {
+  top: 10%;
+  left: 0;
+}
+
+.score-card {
+  right: 0;
+  bottom: 14%;
+}
+
+.section-head {
+  max-width: 820px;
+  margin-bottom: 2rem;
+}
+
+.section-head h2,
+.download h2,
+.student-copy h1,
+.admin-head h1 {
+  margin: 0.8rem 0 0;
+  font-size: clamp(2rem, 4.2vw, 4.2rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.feature-grid,
+.educator-grid,
+.result-grid,
+.course-grid,
+.pricing-grid,
+.metric-grid,
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.feature-card,
+.educator-card,
+.result-card,
+.price-card {
+  padding: 1.2rem;
+}
+
+.feature-card h3,
+.educator-card h3,
+.result-card h3 {
+  margin: 1rem 0 0.45rem;
+}
+
+.feature-card p,
+.educator-card p,
+.price-card p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.soft-band {
+  background: linear-gradient(135deg, rgba(9, 167, 199, 0.08), rgba(240, 138, 36, 0.09));
+}
+
+.educator-grid,
+.result-grid,
+.pricing-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  color: white;
+  background: linear-gradient(135deg, var(--pink), var(--orange));
+  font-weight: 900;
+}
+
+.rating {
+  width: fit-content;
+  margin: 0.8rem 0;
+  padding: 0.4rem 0.55rem;
+  border-radius: 999px;
+  color: #0f7d55;
+  background: #ddf8ee;
+  font-weight: 800;
+}
+
+.result-card strong {
+  font-size: 2rem;
+  color: var(--blue);
+}
+
+.course-card {
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.15rem;
+  color: white;
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 70px rgba(19, 34, 58, 0.22);
+}
+
+.course-card span {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.course-card.blue { background: linear-gradient(135deg, #276ef1, #09a7c7); }
+.course-card.violet { background: linear-gradient(135deg, #7755e7, #db4b82); }
+.course-card.green { background: linear-gradient(135deg, #16a36b, #09a7c7); }
+.course-card.orange { background: linear-gradient(135deg, #f08a24, #db4b82); }
+.course-card.pink { background: linear-gradient(135deg, #db4b82, #276ef1); }
+.course-card.teal { background: linear-gradient(135deg, #09a7c7, #16a36b); }
+
+.download {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(135deg, rgba(8, 17, 31, 0.96), rgba(39, 110, 241, 0.82)),
+    #08111f;
+}
+
+.download p {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.carousel {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.carousel div {
+  padding: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.price-card.featured {
+  color: white;
+  background: linear-gradient(135deg, var(--ink), var(--violet));
+}
+
+.price-card strong {
+  display: block;
+  margin: 0.8rem 0;
+  font-size: 2.3rem;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 2rem;
+  padding: 3rem clamp(1rem, 5vw, 5rem);
+  color: white;
+  background: var(--ink);
+}
+
+.footer a,
+.footer p {
+  display: block;
+  margin: 0.4rem 0;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+}
+
+.student-page {
+  padding: clamp(2rem, 6vw, 5rem);
+}
+
+.student-shell {
+  display: grid;
+  grid-template-columns: minmax(280px, 390px) 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.student-phone {
+  min-height: 720px;
+  padding: 1rem;
+  border-radius: 34px;
+  color: white;
+  background: linear-gradient(160deg, #050914, #24324a);
+  box-shadow: 0 34px 90px rgba(8, 17, 31, 0.3);
+}
+
+.mobile-top,
+.mobile-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.tiny-toggle {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.35rem 0.6rem;
+}
+
+.screen-content {
+  min-height: 580px;
+  padding: 1rem 0;
+}
+
+.mobile-tabs {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 0.8rem;
+}
+
+.mobile-tabs button {
+  min-width: 0;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  background: transparent;
+  text-transform: capitalize;
+  font-size: 0.72rem;
+}
+
+.mobile-tabs button.active {
+  color: white;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.welcome-card,
+.app-card,
+.ai-panel,
+.profile-block {
+  margin-bottom: 0.8rem;
+  padding: 1rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: none;
+}
+
+.app-card strong,
+.welcome-card strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.app-card span,
+.welcome-card span {
+  display: block;
+}
+
+.progress-line {
+  height: 8px;
+  margin-top: 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.progress-line i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #76f2bd;
+}
+
+.ai-panel textarea {
+  width: 100%;
+  min-height: 160px;
+  margin: 1rem 0;
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.analytics-bars {
+  display: flex;
+  align-items: end;
+  gap: 0.7rem;
+  height: 250px;
+  margin: 1rem 0;
+}
+
+.analytics-bars span {
+  flex: 1;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(180deg, #76f2bd, #09a7c7);
+}
+
+.student-feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.student-feature-list span {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  font-weight: 800;
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  min-height: calc(100vh - 74px);
+}
+
+.admin-sidebar {
+  position: sticky;
+  top: 74px;
+  height: calc(100vh - 74px);
+  padding: 1rem;
+  border-right: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.74);
+  overflow: auto;
+}
+
+.admin-sidebar strong {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.admin-sidebar button {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.4rem;
+  padding: 0.75rem;
+  border: 0;
+  border-radius: 8px;
+  color: var(--muted);
+  background: transparent;
+  text-align: left;
+  text-transform: capitalize;
+  font-weight: 800;
+}
+
+.admin-sidebar button.active {
+  color: white;
+  background: var(--ink);
+}
+
+.admin-main {
+  min-width: 0;
+  padding: clamp(1rem, 3vw, 2.4rem);
+}
+
+.admin-head {
+  margin-bottom: 1.4rem;
+}
+
+.metric-grid {
+  margin-bottom: 1rem;
+}
+
+.metric-grid div {
+  padding: 1.1rem;
+}
+
+.admin-grid.two {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.control-form,
+.upload-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.control-form.compact {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+label.wide {
+  grid-column: 1 / -1;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.85rem;
+  color: var(--ink);
+  background: white;
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.crud-block {
+  margin-bottom: 1.2rem;
+}
+
+.crud-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.4rem 0 0.8rem;
+}
+
+.crud-head h2,
+.table-panel h2 {
+  margin: 0;
+}
+
+.table-panel {
+  overflow: auto;
+}
+
+.data-table {
+  min-width: 720px;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(120px, 1fr));
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-top: 1px solid var(--line);
+  align-items: center;
+}
+
+.table-row:first-child {
+  border-top: 0;
+}
+
+.table-head {
+  color: var(--muted);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.actions button {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.45rem 0.6rem;
+  background: white;
+}
+
+.upload-progress {
+  grid-column: 1 / -1;
+  height: 10px;
+  border-radius: 999px;
+  background: #e8eef5;
+}
+
+.upload-progress span {
+  display: block;
+  width: 68%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+}
+
+.role-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-bottom: 1rem;
+}
+
+.role-grid div,
+.integration-card {
+  padding: 1rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@media (max-width: 1080px) {
+  .hero,
+  .download,
+  .student-shell,
+  .admin-grid.two {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid,
+  .metric-grid,
+  .role-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .course-grid,
+  .educator-grid,
+  .result-grid,
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-visual {
+    min-height: 560px;
+  }
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    position: static;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .main-nav {
+    overflow-x: auto;
+  }
+
+  .top-cta {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+    line-height: 1;
+  }
+
+  .hero p {
+    font-size: 0.98rem;
+  }
+
+  .feature-grid,
+  .course-grid,
+  .educator-grid,
+  .result-grid,
+  .pricing-grid,
+  .metric-grid,
+  .role-grid,
+  .footer,
+  .control-form,
+  .control-form.compact,
+  .upload-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .orbit-card {
+    position: static;
+    margin: 0.5rem auto;
+  }
+
+  .hero-visual {
+    display: none;
+    min-height: auto;
+    gap: 0.8rem;
+  }
+
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    position: static;
+    height: auto;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+  }
+
+  .admin-sidebar strong {
+    display: none;
+  }
+
+  .admin-sidebar button {
+    width: auto;
+    white-space: nowrap;
+  }
+
+  .student-phone {
+    min-height: 660px;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+window.SEED = {
+  cms: {
+    brand: "AstraLearn",
+    heroTitle: "India's Ultimate Platform for IIT-JEE, NDA and IISER Preparation",
+    heroSubtitle: "Live classes, elite educators, rank-focused testing, AI doubt support and deeply structured learning for Class 11, Class 12 and competitive exams.",
+    primaryCta: "Start Learning",
+    secondaryCta: "Explore Courses",
+    announcement: "New 2027 achiever batch now open with live diagnostics",
+    theme: "cosmic"
+  },
+  stats: [
+    { label: "Students learning", value: "2.4L+" },
+    { label: "Questions solved", value: "8.7Cr+" },
+    { label: "Top educators", value: "120+" },
+    { label: "Avg score growth", value: "37%" }
+  ],
+  courses: [
+    { title: "JEE Main", level: "Foundation to rank boost", color: "blue", price: 3999 },
+    { title: "JEE Advanced", level: "Deep concept mastery", color: "violet", price: 6499 },
+    { title: "NDA", level: "Maths, GAT and SSB prep", color: "green", price: 2999 },
+    { title: "IISER", level: "Aptitude plus science focus", color: "orange", price: 3499 },
+    { title: "Class 11", level: "School plus entrance bridge", color: "pink", price: 2499 },
+    { title: "Class 12", level: "Boards plus competitive edge", color: "teal", price: 2499 }
+  ],
+  features: [
+    "Live classes",
+    "Mock tests",
+    "AI doubt solving",
+    "PYQs",
+    "Rank predictor",
+    "Notes",
+    "Analytics",
+    "Personalized learning"
+  ],
+  educators: [
+    { name: "Dr. Ananya Rao", subject: "Physics", rating: "4.9", exp: "12 years", demo: "Modern Physics sprint" },
+    { name: "Arjun Mehta", subject: "Mathematics", rating: "4.8", exp: "10 years", demo: "Calculus rank booster" },
+    { name: "Neha Kapoor", subject: "Chemistry", rating: "4.9", exp: "11 years", demo: "Organic reaction maps" }
+  ],
+  results: [
+    { name: "Ritik Sharma", exam: "JEE Advanced", rank: "AIR 42", story: "Improved accuracy from 61% to 88% in 5 months." },
+    { name: "Manya Singh", exam: "NDA", rank: "Recommended", story: "Cracked written test with structured mock analysis." },
+    { name: "Kabir Verma", exam: "IISER", rank: "99.1%ile", story: "Built speed with PYQ clusters and daily DPPs." }
+  ],
+  subjects: [
+    { title: "Physics", icon: "P", order: 1 },
+    { title: "Chemistry", icon: "C", order: 2 },
+    { title: "Mathematics", icon: "M", order: 3 },
+    { title: "Biology", icon: "B", order: 4 },
+    { title: "General Ability", icon: "G", order: 5 }
+  ],
+  chapters: [
+    { title: "Mechanics", subject: "Physics", course: "JEE Main", order: 1 },
+    { title: "Organic Chemistry", subject: "Chemistry", course: "JEE Advanced", order: 2 },
+    { title: "Calculus", subject: "Mathematics", course: "Class 12", order: 3 }
+  ],
+  lectures: [
+    { title: "Rotational Motion Masterclass", course: "JEE Advanced", subject: "Physics", chapter: "Mechanics", duration: "92 min", type: "Live", status: "Published" },
+    { title: "Limits and Continuity", course: "Class 11", subject: "Mathematics", chapter: "Calculus", duration: "68 min", type: "Recorded", status: "Draft" }
+  ],
+  assignments: [
+    { title: "DPP 18 - Electrostatics", course: "JEE Main", chapter: "Electrostatics", deadline: "2026-06-02", status: "Open" },
+    { title: "NDA Maths Set 07", course: "NDA", chapter: "Algebra", deadline: "2026-06-05", status: "Open" }
+  ],
+  questions: [
+    { title: "A particle moves with variable acceleration...", type: "Numerical", difficulty: "Hard", tags: "mechanics,jee-advanced" },
+    { title: "Match the column for organic reagents.", type: "Matrix match", difficulty: "Medium", tags: "organic,pyq" }
+  ],
+  tests: [
+    { title: "JEE Main Full Mock 01", questions: 90, duration: 180, status: "Scheduled" },
+    { title: "IISER Aptitude Simulation", questions: 60, duration: 180, status: "Draft" }
+  ],
+  students: [
+    { name: "Aarav Patel", course: "JEE Main", plan: "Premium", progress: 72 },
+    { name: "Sara Khan", course: "NDA", plan: "Pro", progress: 58 },
+    { name: "Ishan Roy", course: "Class 12", plan: "Free", progress: 31 }
+  ],
+  media: [
+    { title: "Hero mobile mockup", type: "Image", folder: "/cms/homepage" },
+    { title: "Rotational motion notes", type: "PDF", folder: "/lectures/rotational-motion/notes" }
+  ],
+  notifications: [
+    { title: "Live test starts at 7 PM", audience: "JEE Main", channel: "Push" },
+    { title: "New NDA batch orientation", audience: "NDA", channel: "Email" }
+  ],
+  banners: [
+    { title: "Achiever Batch 2027", location: "Homepage hero", active: true },
+    { title: "NDA Weekend Bootcamp", location: "Student dashboard", active: true }
+  ],
+  subscriptions: [
+    { name: "Free", price: 0, features: "Daily practice, limited notes, community doubts" },
+    { name: "Pro", price: 2999, features: "Live classes, DPPs, mock tests, analytics" },
+    { name: "Premium", price: 6999, features: "Everything in Pro, AI doubts, mentorship, rank predictor" }
+  ]
+};
+
+    </script>
+    <script>
+const STORE_KEY = "astralearn-admin-state";
+
+const clone = (value) => JSON.parse(JSON.stringify(value));
+let state = loadState();
+let route = "landing";
+let adminTab = "overview";
+let studentTab = "learn";
+
+function loadState() {
+  const saved = localStorage.getItem(STORE_KEY);
+  if (!saved) return clone(window.SEED);
+  try {
+    return { ...clone(window.SEED), ...JSON.parse(saved) };
+  } catch {
+    return clone(window.SEED);
+  }
+}
+
+function saveState() {
+  localStorage.setItem(STORE_KEY, JSON.stringify(state));
+}
+
+function setRoute(next) {
+  route = next;
+  render();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function uid() {
+  return Math.random().toString(36).slice(2, 9);
+}
+
+function appShell(content) {
+  return `
+    <header class="topbar">
+      <button class="brand" data-route="landing" aria-label="Open landing page">
+        <span class="brand-mark">A</span>
+        <span>${state.cms.brand}</span>
+      </button>
+      <nav class="main-nav" aria-label="Primary">
+        <button class="${route === "landing" ? "active" : ""}" data-route="landing">Landing</button>
+        <button class="${route === "student" ? "active" : ""}" data-route="student">Student App</button>
+        <button class="${route === "admin" ? "active" : ""}" data-route="admin">Admin Control</button>
+      </nav>
+      <button class="top-cta" data-route="admin">Open Admin</button>
+    </header>
+    ${content}
+  `;
+}
+
+function landingPage() {
+  return appShell(`
+    <main>
+      <section class="hero section-band">
+        <div class="hero-copy">
+          <div class="announcement">${state.cms.announcement}</div>
+          <h1>${state.cms.heroTitle}</h1>
+          <p>${state.cms.heroSubtitle}</p>
+          <div class="cta-row">
+            <button class="primary-btn" data-route="student">${state.cms.primaryCta}</button>
+            <button class="secondary-btn" data-route="landing" data-scroll="courses">${state.cms.secondaryCta}</button>
+          </div>
+          <div class="stat-grid">
+            ${state.stats.map((item) => `<div><strong>${item.value}</strong><span>${item.label}</span></div>`).join("")}
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Premium student mobile app mockup">
+          <div class="orbit-card teacher-card">
+            <span>Top educator</span>
+            <strong>Physics rank lab</strong>
+            <small>Live now with 18k learners</small>
+          </div>
+          <div class="phone-shell">
+            <div class="phone-head"></div>
+            <div class="phone-screen">
+              <div class="screen-pill">Today</div>
+              <h3>JEE Advanced Sprint</h3>
+              <div class="progress-ring">88%</div>
+              <div class="mini-bars"><span></span><span></span><span></span><span></span></div>
+              <div class="lesson-tile">Rotational Motion</div>
+              <div class="lesson-tile muted">AI Doubt Solver</div>
+            </div>
+          </div>
+          <div class="orbit-card score-card">
+            <span>Rank predictor</span>
+            <strong>AIR 1,240</strong>
+            <small>Based on 14 mock tests</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="section-head">
+          <span>Premium learning system</span>
+          <h2>Everything serious aspirants need in one controlled ecosystem.</h2>
+        </div>
+        <div class="feature-grid">
+          ${state.features.map((feature, index) => `
+            <article class="feature-card">
+              <span class="icon-box">${feature.split(" ").map((w) => w[0]).join("").slice(0, 2)}</span>
+              <h3>${feature}</h3>
+              <p>${featureCopy(feature, index)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </section>
+
+      <section class="section soft-band">
+        <div class="section-head">
+          <span>Top educators</span>
+          <h2>Built around teachers students trust.</h2>
+        </div>
+        <div class="educator-grid">
+          ${state.educators.map((teacher) => `
+            <article class="educator-card">
+              <div class="avatar">${teacher.name.split(" ").map((w) => w[0]).join("").slice(0, 2)}</div>
+              <h3>${teacher.name}</h3>
+              <p>${teacher.subject} | ${teacher.exp}</p>
+              <div class="rating">Rating ${teacher.rating}</div>
+              <button class="ghost-btn">Watch demo</button>
+              <small>${teacher.demo}</small>
+            </article>
+          `).join("")}
+        </div>
+      </section>
+
+      <section class="section results">
+        <div class="section-head">
+          <span>Results</span>
+          <h2>Scorecards, stories and proof students can believe.</h2>
+        </div>
+        <div class="result-grid">
+          ${state.results.map((result) => `
+            <article class="result-card">
+              <strong>${result.rank}</strong>
+              <h3>${result.name}</h3>
+              <p>${result.exam}</p>
+              <span>${result.story}</span>
+            </article>
+          `).join("")}
+        </div>
+      </section>
+
+      <section class="section" id="courses">
+        <div class="section-head">
+          <span>Courses</span>
+          <h2>Premium tracks for JEE, NDA, IISER and school excellence.</h2>
+        </div>
+        <div class="course-grid">
+          ${state.courses.map((course) => `
+            <article class="course-card ${course.color}">
+              <div>
+                <span>${course.level}</span>
+                <h3>${course.title}</h3>
+              </div>
+              <strong>Rs ${course.price}</strong>
+              <button class="mini-btn">View track</button>
+            </article>
+          `).join("")}
+        </div>
+      </section>
+
+      <section class="download section-band">
+        <div>
+          <span class="eyebrow">App download</span>
+          <h2>Play Store and App Store ready learning experience.</h2>
+          <p>Onboarding, dark mode, dashboard, lecture player, tests, DPPs, PYQs, notes, AI doubts, rank predictor, analytics and profile flows are included in the student app preview.</p>
+          <div class="store-row">
+            <button class="store-btn">App Store</button>
+            <button class="store-btn">Play Store</button>
+          </div>
+        </div>
+        <div class="carousel">
+          <div>Live classes</div>
+          <div>Mock tests</div>
+          <div>Analytics</div>
+          <div>AI doubts</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <span>Subscriptions</span>
+          <h2>Simple plans with room to scale revenue.</h2>
+        </div>
+        <div class="pricing-grid">
+          ${state.subscriptions.map((plan) => `
+            <article class="price-card ${plan.name === "Premium" ? "featured" : ""}">
+              <h3>${plan.name}</h3>
+              <strong>${plan.price === 0 ? "Free" : `Rs ${plan.price}`}</strong>
+              <p>${plan.features}</p>
+              <button class="${plan.name === "Premium" ? "primary-btn" : "secondary-btn"}">Choose ${plan.name}</button>
+            </article>
+          `).join("")}
+        </div>
+      </section>
+    </main>
+    ${footer()}
+  `);
+}
+
+function featureCopy(feature, index) {
+  const copy = [
+    "High-retention sessions with chapter mapping, playlists and attendance visibility.",
+    "Exam-like testing, live rankings, solutions and deep performance breakdowns.",
+    "Fast conceptual support designed for competitive exam problem solving.",
+    "Curated previous year questions by exam, chapter, difficulty and attempt status.",
+    "Score projections from mock history, accuracy and time discipline.",
+    "PDF notes, DPPs, answer keys and downloadable revision packs.",
+    "Chapter-wise strengths, weak zones, streaks and mentor-ready reports.",
+    "Adaptive recommendations based on goals, course and learning pace."
+  ];
+  return copy[index] || `${feature} managed directly from admin control.`;
+}
+
+function footer() {
+  return `
+    <footer class="footer">
+      <div>
+        <strong>${state.cms.brand}</strong>
+        <p>Premium preparation for IIT-JEE, NDA, IISER, Class 11 and Class 12.</p>
+      </div>
+      <div>
+        <a>About</a>
+        <a>Privacy policy</a>
+        <a>Terms</a>
+      </div>
+      <div>
+        <a>Instagram</a>
+        <a>YouTube</a>
+        <a>LinkedIn</a>
+      </div>
+      <div>
+        <a>support@astralearn.in</a>
+        <a>+91 90000 00000</a>
+        <a>App links</a>
+      </div>
+    </footer>
+  `;
+}
+
+function studentApp() {
+  const screens = ["learn", "tests", "doubts", "analytics", "profile"];
+  return appShell(`
+    <main class="student-page">
+      <section class="student-shell">
+        <aside class="student-phone">
+          <div class="mobile-top">
+            <span>${state.cms.brand}</span>
+            <button class="tiny-toggle">Dark</button>
+          </div>
+          ${studentScreen()}
+          <nav class="mobile-tabs">
+            ${screens.map((screen) => `<button class="${studentTab === screen ? "active" : ""}" data-student="${screen}">${screen}</button>`).join("")}
+          </nav>
+        </aside>
+        <section class="student-copy">
+          <span class="eyebrow">Student mobile app</span>
+          <h1>Complete learner journey for serious preparation.</h1>
+          <p>Includes splash, animated onboarding, login/signup, dashboard, lectures, assignments, DPPs, mock tests, live tests, PYQs, PDFs, AI doubt solver, rank predictor, analytics, notifications, profile, search and dark mode.</p>
+          <div class="student-feature-list">
+            ${["Video lectures", "Assignment system", "DPP section", "Mock and live tests", "PYQs", "Notes and PDFs", "Search", "Notifications"].map((item) => `<span>${item}</span>`).join("")}
+          </div>
+        </section>
+      </section>
+    </main>
+  `);
+}
+
+function studentScreen() {
+  if (studentTab === "tests") {
+    return `<div class="screen-content">${state.tests.map((test) => `<div class="app-card"><strong>${test.title}</strong><span>${test.questions} questions | ${test.duration} min</span><button class="mini-btn">Start</button></div>`).join("")}</div>`;
+  }
+  if (studentTab === "doubts") {
+    return `<div class="screen-content"><div class="ai-panel"><span>AI Doubt Solver</span><h3>Upload or type a question</h3><textarea placeholder="Ask a Physics, Chemistry, Maths or NDA doubt"></textarea><button class="primary-btn">Solve doubt</button></div></div>`;
+  }
+  if (studentTab === "analytics") {
+    return `<div class="screen-content"><div class="analytics-bars"><span style="height:66%"></span><span style="height:82%"></span><span style="height:48%"></span><span style="height:91%"></span></div><div class="app-card"><strong>Rank predictor</strong><span>Projected AIR 1,240 | Accuracy 84%</span></div></div>`;
+  }
+  if (studentTab === "profile") {
+    return `<div class="screen-content"><div class="profile-block"><div class="avatar">AP</div><h3>Aarav Patel</h3><span>JEE Main | Premium</span></div><div class="app-card"><strong>Subscription</strong><span>Premium active until 26 May 2027</span></div></div>`;
+  }
+  return `<div class="screen-content"><div class="welcome-card"><span>Good evening</span><h3>Finish Mechanics today</h3><div class="progress-line"><i style="width:72%"></i></div></div>${state.lectures.map((lecture) => `<div class="app-card"><strong>${lecture.title}</strong><span>${lecture.subject} | ${lecture.duration}</span></div>`).join("")}</div>`;
+}
+
+function adminDashboard() {
+  const tabs = [
+    "overview",
+    "cms",
+    "content",
+    "academics",
+    "questions",
+    "tests",
+    "users",
+    "commerce",
+    "media",
+    "notifications",
+    "roles"
+  ];
+  return appShell(`
+    <main class="admin-layout">
+      <aside class="admin-sidebar">
+        <strong>Admin control</strong>
+        ${tabs.map((tab) => `<button class="${adminTab === tab ? "active" : ""}" data-admin="${tab}">${tab}</button>`).join("")}
+      </aside>
+      <section class="admin-main">
+        ${adminPanel()}
+      </section>
+    </main>
+  `);
+}
+
+function adminPanel() {
+  const panels = {
+    overview: overviewPanel,
+    cms: cmsPanel,
+    content: contentPanel,
+    academics: academicsPanel,
+    questions: questionPanel,
+    tests: testsPanel,
+    users: usersPanel,
+    commerce: commercePanel,
+    media: mediaPanel,
+    notifications: notificationPanel,
+    roles: rolesPanel
+  };
+  return panels[adminTab]();
+}
+
+function overviewPanel() {
+  return `
+    <div class="admin-head"><span>Analytics overview</span><h1>Owner command center</h1></div>
+    <div class="metric-grid">
+      <div><span>Revenue</span><strong>Rs 48.6L</strong></div>
+      <div><span>Active students</span><strong>${state.students.length.toLocaleString()}</strong></div>
+      <div><span>Published lectures</span><strong>${state.lectures.length}</strong></div>
+      <div><span>Question bank</span><strong>${state.questions.length}</strong></div>
+    </div>
+    <div class="admin-grid two">
+      ${tablePanel("Recent students", state.students, ["name", "course", "plan", "progress"])}
+      ${tablePanel("Live CMS banners", state.banners, ["title", "location", "active"])}
+    </div>
+  `;
+}
+
+function cmsPanel() {
+  return `
+    <div class="admin-head"><span>Dynamic CMS</span><h1>Edit landing page without coding</h1></div>
+    <form class="control-form" data-form="cms">
+      ${input("brand", "Brand name", state.cms.brand)}
+      ${input("heroTitle", "Hero headline", state.cms.heroTitle)}
+      ${textarea("heroSubtitle", "Hero subtitle", state.cms.heroSubtitle)}
+      ${input("announcement", "Announcement banner", state.cms.announcement)}
+      ${input("primaryCta", "Primary CTA", state.cms.primaryCta)}
+      ${input("secondaryCta", "Secondary CTA", state.cms.secondaryCta)}
+      <button class="primary-btn" type="submit">Publish CMS changes</button>
+    </form>
+    ${crudBlock("Banners", "banners", ["title", "location", "active"])}
+  `;
+}
+
+function contentPanel() {
+  return `
+    <div class="admin-head"><span>Lecture management</span><h1>Upload and organize learning content</h1></div>
+    ${createForm("lectures", [
+      ["title", "Lecture title"],
+      ["course", "Course"],
+      ["subject", "Subject"],
+      ["chapter", "Chapter"],
+      ["duration", "Duration"],
+      ["type", "Live or Recorded"],
+      ["status", "Published or Draft"]
+    ])}
+    ${crudBlock("Lectures", "lectures", ["title", "course", "subject", "chapter", "duration", "status"])}
+    ${createForm("assignments", [
+      ["title", "Assignment or DPP title"],
+      ["course", "Course"],
+      ["chapter", "Chapter"],
+      ["deadline", "Deadline"],
+      ["status", "Status"]
+    ])}
+    ${crudBlock("Assignments and DPPs", "assignments", ["title", "course", "chapter", "deadline", "status"])}
+  `;
+}
+
+function academicsPanel() {
+  return `
+    <div class="admin-head"><span>Subject and chapter control</span><h1>Add new academic structure anytime</h1></div>
+    ${createForm("subjects", [["title", "Subject name"], ["icon", "Icon letters"], ["order", "Order"]])}
+    ${crudBlock("Subjects", "subjects", ["title", "icon", "order"])}
+    ${createForm("chapters", [["title", "Chapter name"], ["subject", "Subject"], ["course", "Course"], ["order", "Order"]])}
+    ${crudBlock("Chapters", "chapters", ["title", "subject", "course", "order"])}
+  `;
+}
+
+function questionPanel() {
+  return `
+    <div class="admin-head"><span>Question bank</span><h1>MCQ, numerical, integer, matrix and assertion-reason support</h1></div>
+    ${createForm("questions", [["title", "Question text"], ["type", "Question type"], ["difficulty", "Difficulty"], ["tags", "Tags"], ["explanation", "Explanation"]])}
+    ${crudBlock("Questions", "questions", ["title", "type", "difficulty", "tags"])}
+  `;
+}
+
+function testsPanel() {
+  return `
+    <div class="admin-head"><span>Mock tests</span><h1>Create exam-like tests and live assessments</h1></div>
+    ${createForm("tests", [["title", "Test title"], ["questions", "Questions"], ["duration", "Duration minutes"], ["status", "Status"]])}
+    ${crudBlock("Mock and live tests", "tests", ["title", "questions", "duration", "status"])}
+  `;
+}
+
+function usersPanel() {
+  return `
+    <div class="admin-head"><span>Student management</span><h1>Manage student accounts and progress</h1></div>
+    ${createForm("students", [["name", "Student name"], ["course", "Course"], ["plan", "Plan"], ["progress", "Progress percent"]])}
+    ${crudBlock("Students", "students", ["name", "course", "plan", "progress"])}
+  `;
+}
+
+function commercePanel() {
+  return `
+    <div class="admin-head"><span>Subscriptions</span><h1>Control plans, offers and revenue model</h1></div>
+    ${createForm("subscriptions", [["name", "Plan name"], ["price", "Price"], ["features", "Features"]])}
+    ${crudBlock("Plans", "subscriptions", ["name", "price", "features"])}
+  `;
+}
+
+function mediaPanel() {
+  return `
+    <div class="admin-head"><span>Cloud media</span><h1>Storage-ready media manager</h1></div>
+    <div class="upload-panel">
+      <input id="mediaTitle" placeholder="Media title" />
+      <select id="mediaType"><option>Video</option><option>PDF</option><option>Image</option><option>Thumbnail</option><option>Banner</option></select>
+      <input id="mediaFolder" placeholder="/lectures/{id}/videos" />
+      <button class="primary-btn" data-media-add>Add media asset</button>
+      <div class="upload-progress"><span></span></div>
+    </div>
+    ${crudBlock("Media library", "media", ["title", "type", "folder"])}
+  `;
+}
+
+function notificationPanel() {
+  return `
+    <div class="admin-head"><span>Notifications</span><h1>Control push, email, SMS and in-app announcements</h1></div>
+    ${createForm("notifications", [["title", "Message"], ["audience", "Audience"], ["channel", "Channel"]])}
+    ${crudBlock("Notifications", "notifications", ["title", "audience", "channel"])}
+  `;
+}
+
+function rolesPanel() {
+  return `
+    <div class="admin-head"><span>Access control</span><h1>Role-based ownership model</h1></div>
+    <div class="role-grid">
+      ${["Owner: full platform control", "Admin: content and user operations", "Teacher: lectures, DPPs and question bank", "Support: students and notifications", "Student: enrolled learning access"].map((role) => `<div>${role}</div>`).join("")}
+    </div>
+    <div class="integration-card">
+      <h3>Backend ready</h3>
+      <p>Connect Firebase Auth, Firestore, Cloud Storage and security rules through the adapter contract in src/services/backend-adapter.js.</p>
+    </div>
+  `;
+}
+
+function createForm(collection, fields) {
+  return `
+    <form class="control-form compact" data-create="${collection}">
+      ${fields.map(([name, label]) => input(name, label, "")).join("")}
+      <button class="primary-btn" type="submit">Add ${collection}</button>
+    </form>
+  `;
+}
+
+function crudBlock(title, collection, fields) {
+  return `
+    <section class="crud-block">
+      <div class="crud-head">
+        <h2>${title}</h2>
+        <span>${state[collection].length} records</span>
+      </div>
+      ${tablePanel("", state[collection], fields, collection)}
+    </section>
+  `;
+}
+
+function tablePanel(title, rows, fields, collection) {
+  const columnCount = fields.length + (collection ? 1 : 0);
+  const gridStyle = `style="grid-template-columns: repeat(${columnCount}, minmax(120px, 1fr))"`;
+  return `
+    <div class="table-panel">
+      ${title ? `<h2>${title}</h2>` : ""}
+      <div class="data-table">
+        <div class="table-row table-head" ${gridStyle}>
+          ${fields.map((field) => `<span>${field}</span>`).join("")}
+          ${collection ? "<span>Actions</span>" : ""}
+        </div>
+        ${rows.map((row, index) => `
+          <div class="table-row" ${gridStyle}>
+            ${fields.map((field) => `<span>${String(row[field] ?? "")}</span>`).join("")}
+            ${collection ? `<span class="actions"><button data-edit="${collection}:${index}">Edit</button><button data-delete="${collection}:${index}">Delete</button></span>` : ""}
+          </div>
+        `).join("")}
+      </div>
+    </div>
+  `;
+}
+
+function input(name, label, value) {
+  return `<label><span>${label}</span><input name="${name}" value="${escapeAttr(value)}" /></label>`;
+}
+
+function textarea(name, label, value) {
+  return `<label class="wide"><span>${label}</span><textarea name="${name}">${escapeHtml(value)}</textarea></label>`;
+}
+
+function escapeAttr(value) {
+  return String(value ?? "").replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;");
+}
+
+function escapeHtml(value) {
+  return String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;");
+}
+
+function bindEvents() {
+  document.querySelectorAll("[data-route]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.dataset.scroll) {
+        document.getElementById(button.dataset.scroll)?.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+      setRoute(button.dataset.route);
+    });
+  });
+
+  document.querySelectorAll("[data-admin]").forEach((button) => {
+    button.addEventListener("click", () => {
+      adminTab = button.dataset.admin;
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-student]").forEach((button) => {
+    button.addEventListener("click", () => {
+      studentTab = button.dataset.student;
+      render();
+    });
+  });
+
+  const cmsForm = document.querySelector("[data-form='cms']");
+  if (cmsForm) {
+    cmsForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(cmsForm);
+      state.cms = { ...state.cms, ...Object.fromEntries(data.entries()) };
+      saveState();
+      render();
+    });
+  }
+
+  document.querySelectorAll("[data-create]").forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const collection = form.dataset.create;
+      const item = Object.fromEntries(new FormData(form).entries());
+      item.id = uid();
+      state[collection].push(item);
+      saveState();
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-delete]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const [collection, index] = button.dataset.delete.split(":");
+      state[collection].splice(Number(index), 1);
+      saveState();
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-edit]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const [collection, index] = button.dataset.edit.split(":");
+      const row = state[collection][Number(index)];
+      const title = prompt("Update title/name", row.title || row.name || row.brand || "");
+      if (!title) return;
+      if ("title" in row) row.title = title;
+      else row.name = title;
+      saveState();
+      render();
+    });
+  });
+
+  const mediaButton = document.querySelector("[data-media-add]");
+  if (mediaButton) {
+    mediaButton.addEventListener("click", () => {
+      const title = document.getElementById("mediaTitle").value || "Untitled asset";
+      const type = document.getElementById("mediaType").value;
+      const folder = document.getElementById("mediaFolder").value || "/cms/uploads";
+      state.media.push({ id: uid(), title, type, folder });
+      saveState();
+      render();
+    });
+  }
+}
+
+function render() {
+  const app = document.getElementById("app");
+  app.innerHTML = route === "admin" ? adminDashboard() : route === "student" ? studentApp() : landingPage();
+  bindEvents();
+}
+
+render();
+
+    </script>
+  </body>
+</html>
